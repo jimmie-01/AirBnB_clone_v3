@@ -8,24 +8,24 @@ from models import storage
 
 @app_views.route('/status')
 def api_status():
-	"""
-	Returns a JSON response for RESTFUL API health
-	"""
-	response = {'status': "OK"}
-	return jsonify(response)
+    """
+    Returns a JSON response for RESTFUL API health
+    """
+    response = {'status': "OK"}
+    return jsonify(response)
 
 
 @app_views.route('/stats')
 def get_stats():
-	"""
-	stats of all objs route
-	"""
-	stats = {
-		'amenities': storage.count('Amenity'),
-		'cities': storage.count('City'),
-		'places': storage.count('Place'),
-		'reviews': storage.count('Review'),
-		'states': storage.count('State'),
-		'users': storage.count('User'),
+    """
+    stats of all objs route
+    """
+    stats = {
+        'amenities': storage.count('Amenity'),
+        'cities': storage.count('City'),
+        'places': storage.count('Place'),
+        'reviews': storage.count('Review'),
+        'states': storage.count('State'),
+        'users': storage.count('User'),
     }
-	return jsonify(stats)
+    return jsonify(stats)
